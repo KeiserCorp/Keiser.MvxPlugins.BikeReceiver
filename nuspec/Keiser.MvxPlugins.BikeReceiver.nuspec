@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>Keiser.MvxPlugins.BikeReceiver</id>
+		<version>1.0.0</version>
+		<title>Keiser.MvxPlugins.BikeReceiver</title>
+		<authors>Keiser Corp.</authors>
+		<owners>Keiser Corp.</owners>
+			<licenseUrl>https://github.com/KeiserCorp/Keiser.MvxPlugins.BikeReceiver/blob/master/LICENSE</licenseUrl>
+			<projectUrl>https://github.com/KeiserCorp/Keiser.MvxPlugins.BikeReceiver</projectUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>This package contains the 'BikeReceiver' plugin for MvvmCross v3.</description>
+		<copyright>Copyright 2015</copyright>
+		<tags>xamarin mvvmcross mvx keiser socket</tags>
+		<dependencies>
+			<dependency id="MvvmCross.HotTuna.CrossCore" version="3.2.1" />
+		</dependencies>
+	</metadata>
+	<files>
+		<!-- PCL -->
+		<file src="..\Keiser.MvxPlugins.BikeReceiver\bin\Release\Keiser.MvxPlugins.BikeReceiver.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+MonoTouch10\Keiser.MvxPlugins.BikeReceiver.dll" />
+		<file src="..\Keiser.MvxPlugins.BikeReceiver\bin\Release\Keiser.MvxPlugins.BikeReceiver.dll" target="lib\portable-net45+win+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Keiser.MvxPlugins.BikeReceiver.dll" />
+
+		<!-- droid -->
+		<file src="..\Keiser.MvxPlugins.BikeReceiver\bin\Release\Keiser.MvxPlugins.BikeReceiver.dll" target="lib\MonoAndroid\Keiser.MvxPlugins.BikeReceiver.dll" />
+		<file src="..\Keiser.MvxPlugins.BikeReceiver.Droid\bin\Release\Keiser.MvxPlugins.BikeReceiver.Droid.dll" target="lib\MonoAndroid\Keiser.MvxPlugins.BikeReceiver.Droid.dll" />
+		<file src="BootstrapContent\BikeReceiverPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\BikeReceiverPluginBootstrap.cs.pp" />
+	</files>
+</package>

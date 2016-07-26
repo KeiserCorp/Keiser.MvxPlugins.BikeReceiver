@@ -41,11 +41,15 @@ namespace Keiser.MvxPlugins.BikeReceiver.Droid
                 UsbDevice device = deviceEntry.Value;
                 if (device.VendorId == 0x0483 && device.ProductId == 0x5740)
                 {
+#if DEBUG
                     Trace.Info("Usb Receiver Connected");
+#endif
 
                     if (UsbManager.HasPermission(device))
                     {
+#if DEBUG
                         Trace.Info("Usb Receiver Permission Already Granted");
+#endif
                         OpenDevice(device);
                     }
                     else
@@ -74,7 +78,9 @@ namespace Keiser.MvxPlugins.BikeReceiver.Droid
             UsbDevice device = (UsbDevice)intent.GetParcelableExtra(UsbManager.ExtraDevice);
             if (intent.GetBooleanExtra(UsbManager.ExtraPermissionGranted, false))
             {
+#if DEBUG
                 Trace.Info("Usb Receiver Permission Granted");
+#endif
                 OpenDevice(device);
             }
         }
@@ -100,20 +106,24 @@ namespace Keiser.MvxPlugins.BikeReceiver.Droid
                 WriteEndpoint = DataInterface.GetEndpoint(0);
                 UsbDevice = device;
                 IsConnected = true;
+#if DEBUG
                 Trace.Info("Usb Receiver Ready");
+#endif
             }
             catch (Exception e)
             {
-                Trace.Info(e.Message);
+                Trace.Error(e.Message);
             }
         }
 
         protected byte[] buffer = new byte[4096];
-        public byte[] Read() {
+        public byte[] Read()
+        {
             int numBytesRead;
             numBytesRead = UsbDeviceConnection.BulkTransfer(ReadEndpoint, buffer, buffer.Length, 1000);
 
-            if (numBytesRead <= 0) {
+            if (numBytesRead <= 0)
+            {
                 numBytesRead = 0;
             }
             byte[] destBuffer = new byte[numBytesRead];

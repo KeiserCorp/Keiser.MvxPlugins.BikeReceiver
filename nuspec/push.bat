@@ -1,1 +1,1 @@
-..\..\nuget push Keiser.MvxPlugins.BikeReceiver.1.5.5.nupkg
+..\..\nuget push Keiser.MvxPlugins.BikeReceiver.1.0.0.nupkg
