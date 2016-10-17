@@ -119,16 +119,24 @@ namespace Keiser.MvxPlugins.BikeReceiver.Droid
         protected byte[] buffer = new byte[4096];
         public byte[] Read()
         {
-            int numBytesRead;
-            numBytesRead = UsbDeviceConnection.BulkTransfer(ReadEndpoint, buffer, buffer.Length, 1000);
-
-            if (numBytesRead <= 0)
+            try
             {
-                numBytesRead = 0;
+                int numBytesRead;
+                numBytesRead = UsbDeviceConnection.BulkTransfer(ReadEndpoint, buffer, buffer.Length, 1000);
+
+                if (numBytesRead <= 0)
+                {
+                    numBytesRead = 0;
+                }
+                byte[] destBuffer = new byte[numBytesRead];
+                Array.Copy(buffer, destBuffer, numBytesRead);
+                return destBuffer;
             }
-            byte[] destBuffer = new byte[numBytesRead];
-            Array.Copy(buffer, destBuffer, numBytesRead);
-            return destBuffer;
+            catch (Exception e)
+            {
+                Trace.Error(e.Message);
+                return new byte[0];
+            }
         }
     }
 }
