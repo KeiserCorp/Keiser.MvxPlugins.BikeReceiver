@@ -1,5 +1,5 @@
-Mvx Bike Receiver Plugin for MvvmCross
-========================
+# Mvx Bike Receiver Plugin for MvvmCross
+:no_entry: [DEPRECATED] This repository is no longer maintained.
 
 ## Project
 MvvmCross plugin which enables use of the Multi-Bike Receiver.
@@ -10,8 +10,7 @@ Current Platform Support:
 ## Install & Use
 * NuGet: https://www.nuget.org/packages/Keiser.MvxPlugins.BikeReceiver/
 
-## Contributors
-* [bayssmekanique](https://github.com/bayssmekanique)
+## Copyright and License
+Copyright 2016 [Keiser Corporation](http://keiser.com/).
 
-## License
-Licensed under [The MIT License (MIT)](http://opensource.org/licenses/MIT)
+Licensed under the [MIT license](LICENSE.md).
